@@ -1,4 +1,4 @@
-libpar2 is a library for par2, extracted from par2cmdline 0.4.
+libpar2 is a library for par2, extracted from par2cmdline 0.4. It depends on libsigc++.
 
 par2cmdline README follows :
 
