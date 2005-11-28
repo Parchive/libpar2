@@ -1,5 +1,21 @@
 libpar2 is a library for par2, extracted from par2cmdline 0.4. It depends on libsigc++.
 
+To install, use the classic
+  -> ./configure
+  -> make
+  -> make install
+
+
+
+By default, the lib will install in /usr/local/lib, so you need to be sure that your ld is well configured:
+
+  -> Edit your /etc/ld.so.conf, and check that there is a line "/usr/local/lib" (if it is not present, add it)
+  -> execute 'ldconfig'
+
+
+
+
+
 par2cmdline README follows :
 
 -------------------------------------------------------------
