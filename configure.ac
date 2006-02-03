@@ -21,13 +21,13 @@ dnl                                               -*- Autoconf -*-
 dnl Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.58a)
-AC_INIT([libpar2], [0.1], [flesueur@users.sourceforge.net])
+AC_INIT([libpar2], [0.2], [flesueur@users.sourceforge.net])
 AC_CONFIG_SRCDIR([par2cmdline.cpp])
 
 AC_CANONICAL_HOST
 
 AM_CONFIG_HEADER(config.h)
-AM_INIT_AUTOMAKE(libpar2,0.1)
+AM_INIT_AUTOMAKE(libpar2,0.2)
 
 
 dnl Checks for programs.

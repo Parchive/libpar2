@@ -66,4 +66,4 @@ library_include_HEADERS = *.h
 libpar2_configdir = $(libdir)/libpar2/include
 libpar2_config_DATA = config.h
 
-libpar2_la_LDFLAGS = -version-info 0:0:0
+libpar2_la_LDFLAGS = -version-info 0:1:0
