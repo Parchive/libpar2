@@ -133,7 +133,7 @@ Result Par2Repairer::PreProcess(const CommandLine &commandline)
   headers->other_files = 
     mainpacket->TotalFileCount() - mainpacket->RecoverableFileCount();
   sig_headers.emit(headers);
-
+  /*
   cout << "Values:" << endl <<
     "setid: " << setid << endl <<
     "blocksize: " << blocksize << endl <<
@@ -150,7 +150,7 @@ Result Par2Repairer::PreProcess(const CommandLine &commandline)
     "totalsize: " << totalsize << endl <<
     "RecoverableFileCount: " << mainpacket->RecoverableFileCount() << endl <<
     "TotalFileCount: " << mainpacket->TotalFileCount() << endl;
-  
+  */
 
   return eSuccess;
 }
@@ -294,6 +294,7 @@ Result Par2Repairer::Process(const CommandLine &commandline, bool dorepair)
 		  size_t blocklength = (size_t)min((u64)chunksize, blocksize-blockoffset);
 		  
 		  // Read source data, process it through the RS matrix and write it to disk.
+		  
 		  if (!ProcessData(blockoffset, blocklength))
 		    {
 		      // Delete all of the partly reconstructed files
@@ -1260,6 +1261,7 @@ bool Par2Repairer::VerifySourceFiles(void)
         DiskFile::SplitFilename(filename, path, name);
 
         cout << "Target: \"" << name << "\" - missing." << endl;
+	sig_done.emit(name, 0, sourcefile->GetVerificationPacket()->BlockCount());
       }
     }
 
@@ -1802,6 +1804,7 @@ bool Par2Repairer::ScanDataFile(DiskFile                *diskfile,    // [in]
       }
     }
   }
+  sig_done.emit(name,count,sourcefile->GetVerificationPacket()->BlockCount()); 
   sig_progress.emit(1000.0);
   return true;
 }
@@ -2285,7 +2288,7 @@ bool Par2Repairer::ProcessData(u64 blockoffset, size_t blocklength)
           if (oldfraction != newfraction)
           {
             cout << "Repairing: " << newfraction/10 << '.' << newfraction%10 << "%\r" << flush;
-	sig_progress.emit(newfraction);
+	    sig_progress.emit(newfraction);
 
           }
         }

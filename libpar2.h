@@ -15,11 +15,14 @@ class LibPar2
   sigc::signal<void, std::string> sig_filename;
   sigc::signal<void, double> sig_progress;
   sigc::signal<void, ParHeaders*> sig_headers;  
+  sigc::signal<void, std::string, int, int> sig_done;  
 
  protected:
   void signal_filename(std::string str);
   void signal_progress(double value);
   void signal_headers(ParHeaders* headers);
+  void signal_done(std::string filename, int blocks_available, 
+		   int blocks_total);
 
  protected:
   CommandLine* commandLine;

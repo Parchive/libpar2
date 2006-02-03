@@ -21,6 +21,8 @@ LibPar2::LibPar2(CommandLine* commandline) {
 	  connect( sigc::mem_fun(*this,&LibPar2::signal_progress));
 	par2Repairer->sig_headers.
 	  connect( sigc::mem_fun(*this,&LibPar2::signal_headers));
+	par2Repairer->sig_done.
+	  connect( sigc::mem_fun(*this,&LibPar2::signal_done));
 	//par2Repairer->
       }
       break;
@@ -84,4 +86,9 @@ void LibPar2::signal_progress(double value) {
 
 void LibPar2::signal_headers(ParHeaders* headers) {
   sig_headers.emit(headers);
+}
+
+void LibPar2::signal_done(std::string filename, int blocks_available, 
+			  int blocks_total) {
+  sig_done.emit(filename, blocks_available, blocks_total);
 }

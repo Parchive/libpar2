@@ -34,6 +34,7 @@ public:
   sigc::signal<void, std::string> sig_filename;
   sigc::signal<void, double> sig_progress;
   sigc::signal<void, ParHeaders*> sig_headers;
+  sigc::signal<void, std::string, int, int> sig_done;
 
 protected:
   // Steps in verifying and repairing files:
