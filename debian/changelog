@@ -1,0 +1,19 @@
+libpar2 (0.2-1) unstable; urgency=low
+
+  * Changed version, binary, and dev package name
+
+ -- John Augustine <jaugustine@vivnet.net>  Thu, 23 Feb 2006 17:46:32 -0800
+
+libpar2 (0.2) unstable; urgency=low
+
+  * Added support for detailed output
+  * Fixed some bugs
+
+ -- Francois Lesueur <flesueur@users.sourceforge.net>  Fri, 3 Feb 2006 12:46:11 -0800 
+
+libpar2 (0.1) unstable; urgency=low
+
+  * Initial release
+
+ -- Francois Lesueur <flesueur@users.sourceforge.net>  Wed, 30 Nov 2005 17:28:59 -0800
+
