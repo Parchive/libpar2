@@ -51,7 +51,9 @@ LDADD = -lstdc++ -lsigc-2.0
 INCLUDES = `pkg-config sigc++-2.0 --cflags`
 AM_CXXFLAGS = -Wall
 
-EXTRA_DIST = PORTING ROADMAP 
+EXTRA_DIST = PORTING ROADMAP debian/changelog debian/compat debian/control \
+	debian/copyright debian/libpar2-0-dev.dirs debian/docs \
+	debian/rules debian/libpar2-0.dirs 
 #par2cmdline.sln par2cmdline.vcproj \
 #	testdata.tar.gz pretest test1 test2 test3 test4 test5 test6 \
 #	posttest
