@@ -9,7 +9,7 @@ class ParHeaders {
   int other_files;
   int block_size;
   int data_blocks;
-  int data_size;
+  long int data_size;
   int chunk_size;
   
   ParHeaders(void);
